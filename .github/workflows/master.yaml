@@ -55,7 +55,6 @@ jobs:
         uses: saubermacherag/ansible-playbook-docker-action@v1.3
         with:
           playbookName: .ansible/main.yaml
-          keyFileVaultPass: ${{ secrets.PROD_ANSIBLE_VAULT_PASSWORD }}
           inventoryFile: .ansible/inventories/prod/hosts.yml
           extraVars: -e env=prod
 
