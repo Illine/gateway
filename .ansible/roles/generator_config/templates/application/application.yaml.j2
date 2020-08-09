@@ -1,0 +1,13 @@
+spring:
+  groovy:
+    template:
+      check-template-location: false
+
+logging:
+  config: {{ application.directory.config }}/logback.groovy
+
+zuul:
+  routes:
+    geomagnetic:
+      path: /geomagnetic/**
+      stripPrefix: true

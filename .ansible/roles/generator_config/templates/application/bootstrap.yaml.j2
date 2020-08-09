@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: {{ application.name }}
+
+server:
+  port: {{ application.web_port }}
+
+management:
+  server:
+    port: {{ application.service_port }}
