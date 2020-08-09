@@ -48,7 +48,6 @@ jobs:
         uses: saubermacherag/ansible-playbook-docker-action@v1.3
         with:
           playbookName: .ansible/main.yaml
-          keyFileVaultPass: ${{ secrets.TEST_ANSIBLE_VAULT_PASSWORD }}
           inventoryFile: .ansible/inventories/test/hosts.yml
           extraVars: -e env=test
 
