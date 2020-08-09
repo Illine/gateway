@@ -1,0 +1,11 @@
+---
+application:
+  name: gateway
+  web_port: 8000
+  service_port: 7000
+
+  directory:
+    config: "/opt/gateway/config"
+    logs: "/opt/gateway/logs"
+
+docker_repository: illine

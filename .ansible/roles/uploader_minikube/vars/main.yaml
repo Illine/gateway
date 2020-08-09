@@ -1,0 +1,8 @@
+---
+k8s:
+  directory:
+    configs: "{{ playbook_dir }}/configs/k8s"
+  files:
+    - config-map.yaml
+    - service.yaml
+    - deployment.yaml
