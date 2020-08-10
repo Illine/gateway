@@ -1,0 +1,16 @@
+source:
+  - 'src/main/**'
+
+devops:
+  - '.*/**'
+  - 'Dockerfile'
+  - 'Makefile'
+
+config:
+  - '.*'
+  - '*.gradle'
+  - '*.config'
+
+community:
+  - '*.md'
+  - 'LICENSE'

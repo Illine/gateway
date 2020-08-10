@@ -1,0 +1,10 @@
+spring:
+  groovy:
+    template:
+      check-template-location: false
+
+zuul:
+  routes:
+    geomagnetic:
+      path: /geomagnetic/**
+      stripPrefix: true
