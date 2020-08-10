@@ -7,7 +7,6 @@ logging:
   config: {{ application.directory.config }}/logback.groovy
 
 zuul:
-  ignored-patterns: /{{ application.name }}/**
   host:
     connect-timeout-millis: {{ zuul.host.connect_timeout_millis | default(15000) }}
     socket-timeout-millis: {{ zuul.host.socket_timeout_millis | default(15000) }}
