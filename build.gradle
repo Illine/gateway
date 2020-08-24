@@ -27,6 +27,7 @@ ext {
     set("springCloudVersion", "Hoxton.SR6")
     set("logbackVersion", "1.2.3")
     set("swaggerVersion", "2.9.2")
+    set("micrometerVersion", "1.5.4")
     set("groovyVersion", "2.5.5")
 }
 
@@ -40,6 +41,7 @@ dependencies {
     api "ch.qos.logback:logback-classic:${logbackVersion}"
     api "io.springfox:springfox-swagger2:${swaggerVersion}"
     api "io.springfox:springfox-swagger-ui:${swaggerVersion}"
+    api "io.micrometer:micrometer-registry-prometheus:${micrometerVersion}"
 
     runtimeOnly "org.codehaus.groovy:groovy-all:${groovyVersion}"
 
