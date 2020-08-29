@@ -1,12 +1,12 @@
 resources:
   requests:
-    cpu: 200m
+    cpu: 100m
     memory: 256Mi
   limits:
-    cpu: 300m
-    memory: 512Mi
+    cpu: 500m
+    memory: 768Mi
   java_opts:
-    - "-server -Xms256M -Xmx512M"
+    - "-server -Xms768M -Xmx768M"
     - "-XX:MaxRAMPercentage=85.0"
     - "-XX:+UseContainerSupport"
     - "-XX:+AlwaysActAsServerClassMachine"
