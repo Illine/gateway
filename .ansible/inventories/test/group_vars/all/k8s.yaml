@@ -1,4 +1,4 @@
-namespace: prod
+namespace: test
 
 deployment:
   replicas: 1
