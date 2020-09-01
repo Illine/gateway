@@ -1,4 +1,4 @@
-package com.illine.weather.gateway.config;
+package ru.illine.weather.gateway.config;
 
 import org.springframework.cloud.netflix.zuul.filters.ZuulProperties;
 import org.springframework.context.annotation.Bean;

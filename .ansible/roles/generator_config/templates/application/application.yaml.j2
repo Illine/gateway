@@ -8,15 +8,16 @@ logging:
 
 zuul:
   host:
-    connect-timeout-millis: {{ zuul.host.connect_timeout_millis | default(15000) }}
-    socket-timeout-millis: {{ zuul.host.socket_timeout_millis | default(15000) }}
+    connect-timeout-millis: {{ zuul.host.connect_timeout_millis | default(30000) }}
+    socket-timeout-millis: {{ zuul.host.socket_timeout_millis | default(30000) }}
   routes:
     geomagnetic:
       path: /geomagnetic/**
       stripPrefix: true
 
-ribbon:
-  ReadTimeout: {{ ribbon.read_timeout | default(15000) }}
-  ConnectTimeout: {{ ribbon.connect_timeout | default(15000) }}
-  eureka:
-    enabled: false
+geomagnetic:
+    ribbon:
+        ReadTimeout: {{ geomagnetic.ribbon.read_timeout | default(30000) }}
+        ConnectTimeout: {{ geomagnetic.ribbon.connect_timeout | default(30000) }}
+        ServerListRefreshInterval: {{ geomagnetic.ribbon.server_list_refresh_interval | default(60000) }}
+        KubernetesNamespace: {{ namespace }}

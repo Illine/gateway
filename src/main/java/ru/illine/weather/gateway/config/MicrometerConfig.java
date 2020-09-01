@@ -1,4 +1,4 @@
-package com.illine.weather.gateway.config;
+package ru.illine.weather.gateway.config;
 
 import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.beans.factory.annotation.Value;
