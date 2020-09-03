@@ -6,7 +6,7 @@ deployment:
   image_pull_policy: Never
 
   health:
-    progress_deadline_seconds: 90 # 10 + initial_delay_seconds + (period_seconds * failure_threshold)
+    progress_deadline_seconds: 90
     initial_delay_seconds: 40
     period_seconds: 10
     timeout_seconds: 5
