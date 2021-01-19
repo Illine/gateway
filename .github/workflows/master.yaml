@@ -69,6 +69,7 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GKE_AUTH }}
           CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
           ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
           args: apply -f $K8S_DIR/config-map.yaml
 
@@ -79,6 +80,7 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GKE_AUTH }}
           CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
           ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
           args: apply -f $K8S_DIR/service.yaml
 
@@ -89,5 +91,6 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GKE_AUTH }}
           CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
           ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
           args: apply -f $K8S_DIR/deployment.yaml --record
