@@ -47,9 +47,13 @@ jobs:
 
       - name: Setup Image Tag
         run: echo ::set-env name=IMAGE_TAG::$(echo ${{needs.build.outputs.new_tag}})
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Setup Kubernetes Config Directory
         run: echo ::set-env name=K8S_DIR::$(echo ".ansible/configs/k8s")
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Generate Configs by Ansible Playbook
         uses: saubermacherag/ansible-playbook-docker-action@v1.3
@@ -65,6 +69,7 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GKE_AUTH }}
           CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
           ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
           args: apply -f $K8S_DIR/config-map.yaml
 
@@ -75,6 +80,7 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GKE_AUTH }}
           CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
           ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
           args: apply -f $K8S_DIR/service.yaml
 
@@ -85,5 +91,6 @@ jobs:
           APPLICATION_CREDENTIALS: ${{ secrets.GKE_AUTH }}
           CLUSTER_NAME: ${{ secrets.GKE_CLUSTER_NAME }}
           ZONE_NAME: ${{ secrets.GKE_ZONE_NAME }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         with:
           args: apply -f $K8S_DIR/deployment.yaml --record
