@@ -47,9 +47,13 @@ jobs:
 
       - name: Setup Image Tag
         run: echo ::set-env name=IMAGE_TAG::$(echo ${{needs.build.outputs.new_tag}})
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Setup Kubernetes Config Directory
         run: echo ::set-env name=K8S_DIR::$(echo ".ansible/configs/k8s")
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Generate Configs by Ansible Playbook
         uses: saubermacherag/ansible-playbook-docker-action@v1.3

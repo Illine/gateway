@@ -22,6 +22,8 @@ jobs:
 
       - name: Setup Docker Tag
         run: echo ::set-env name=DOCKER_TAG::$(echo ${GITHUB_SHA::8})
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Docker Build and Push
         uses: elgohr/Publish-Docker-Github-Action@2.18
@@ -40,9 +42,13 @@ jobs:
 
       - name: Setup Image Tag
         run: echo ::set-env name=IMAGE_TAG::$(echo ${GITHUB_SHA::8})
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Setup Kubernetes Config Directory
         run: echo ::set-env name=K8S_DIR::$(echo ".ansible/configs/k8s")
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 
       - name: Generate Configs by Ansible Playbook
         uses: saubermacherag/ansible-playbook-docker-action@v1.3
