@@ -4,7 +4,9 @@
 The service exposes general Swagger's endpoind for the Weather Services. 
 
 ## Release
-### 1.6.0
+### 1.5.0
 new GKE
-### 1.5.0 
+### 1.4.0
+new GKE
+### 1.3.0 
 new GKE
